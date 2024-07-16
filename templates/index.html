@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document Search</title>
+
+
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="../static/js/bootstrap.min.js" type="text/javascript"></script>
+    <link href="../static/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../static/css/responsive.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        .nav-tabs {
+            justify-content: center;
+        }
+
+        .newfontsize {
+            font-size: 1.3rem;
+        }
+
+        .tabfontsize {
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-area" style="background-color: #0094BC">
+        <div class="sticky-area">
+            <div class="navigation">
+
+                <div class="container" style="max-width: 100%">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="logo" style="text-align: left">
+                                <a class="navbar-brand" href="https://www.onwardgroup.com/" target="_blank">
+                                    <img src="../static/img/logo1.svg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="sub-title" style="text-align: left">
+                                <p style="font-size: 40px; color: white; font-family: sans-serif">Intelligent File
+                                    Search</p>
+                                <p style="font-size: 15px; color: white; font-family: sans-serif"> &nbsp;&nbsp;Version
+                                    1.0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div style="margin-top: 25px;">
+        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active tabfontsize" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab"
+                    aria-controls="tab1" aria-selected="true">&nbsp;&nbsp;&nbsp;Conditional&nbsp;&nbsp;&nbsp;</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link tabfontsize" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab"
+                    aria-controls="tab2" aria-selected="false">&nbsp;&nbsp;&nbsp;Contextual&nbsp;&nbsp;&nbsp;</a>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+
+                <form action="/ConditionalSearch" method="post" class="quotation-form">
+
+                    <div style="width:100%;padding-left:15px;padding-right:15px;padding-bottom:2px;padding-top:0px;">
+                        <div class="col-md-3" style="display: none;">
+                            <div class="form-group">
+                                <label for="Author" class="font-weight-bold">Author</label>
+                                <textarea class="form-control" name="Author_AND" placeholder="Author AND condition."
+                                    style="margin-top:5px;"></textarea>
+                                <textarea class="form-control" name="Author_OR" placeholder="Author OR condition."
+                                    style="margin-top:5px;"></textarea>
+                                <textarea class="form-control" name="Author_EXCLUDE"
+                                    placeholder="Author EXCLUDE condition." style="margin-top:5px;"></textarea>
+                            </div>
+                        </div>
+                        <br />
+                        <div style="background-color: lightblue; height: 40px; display: flex; align-items: center;">
+
+                            <div class="col-md-3">
+                                <label for="title" class="font-weight-bold newfontsize">Title</label>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="keywords" class="font-weight-bold newfontsize">Keywords</label>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="abstract" class="font-weight-bold newfontsize">Abstract</label>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="body" class="font-weight-bold newfontsize">Body</label>
+                            </div>
+                        </div>
+                        <br />
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <textarea class="form-control" name="title_AND" placeholder="Title AND condition..."
+                                    style="margin-top:5px;"></textarea>
+                            </div>
+                            <div class="col-md-3">
+                                <textarea class="form-control" name="keywords_AND" placeholder="Keywords AND condition..."
+                                    style="margin-top:5px;"></textarea>
+                            </div>
+                            <div class="col-md-3">
+                                <textarea class="form-control" name="abstract_AND" placeholder="Abstract AND condition..."
+                                    style="margin-top:5px;"></textarea>
+                            </div>
+                            <div class="col-md-3">
+                                <textarea class="form-control" name="body_AND" placeholder="Body AND condition..."
+                                    style="margin-top:5px;"></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <textarea class="form-control" name="title_OR" placeholder="Title OR condition..."
+                                    style="margin-top:5px;"></textarea>
+                            </div>
+                            <div class="col-md-3">
+                                <textarea class="form-control" name="keywords_OR" placeholder="Keywords OR condition..."
+                                    style="margin-top:5px;"></textarea>
+                            </div>
+                            <div class="col-md-3">
+                                <textarea class="form-control" name="abstract_OR" placeholder="Abstract OR condition..."
+                                    style="margin-top:5px;"></textarea>
+                            </div>
+                            <div class="col-md-3">
+                                <textarea class="form-control" name="body_OR" placeholder="Body OR condition..."
+                                    style="margin-top:5px;"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="title_EXCLUDE"
+                                        placeholder="Title EXCLUDE condition..." style="margin-top:5px;"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="keywords_EXCLUDE"
+                                        placeholder="Keywords EXCLUDE condition..." style="margin-top:5px;"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="abstract_EXCLUDE"
+                                        placeholder="Abstract EXCLUDE condition..." style="margin-top:5px;"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="body_EXCLUDE"
+                                        placeholder="Body EXCLUDE condition..." style="margin-top:5px;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col-md-12 d-flex justify-content-center">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-outline-info">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                <form action="/ContextualSearch" method="post" class="quotation-form">
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="search_text_model1" class="font-weight-bold newfontsize">Enter Search
+                                    criteria</label>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+
+                                <textarea class="form-control" id="search_text_model1" name="search_text_model1"
+                                    rows="5" style="height: 120px;" placeholder="Enter your search criteria..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-outline-info">Search</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
